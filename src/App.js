@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProductCard from './components/ProductCard';
 import { Products as products } from './constants';
+import Footer from './components/Footer';
 
 export default function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,9 +13,16 @@ export default function App() {
     setCurrentIndex((prev) => (prev + 1) % products.length);
   };
 
+  const handleFooterAction = (action) => {
+    console.log(action);
+  };
+
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gray-50 p-4">
-      <div className="relative w-full max-w-md h-[70vh]">
+    <div className="w-full h-screen flex flex-col items-center bg-gray-50 p-4">
+      <div className='text-4xl mb-4 text-pretty-blue text-cursive font-pacifico'>
+        Shoppin'
+      </div>
+      <div className="relative w-full max-w-md h-[80vh]">
         <AnimatePresence>
           {products.slice(currentIndex, currentIndex + 3).map((product, index) => (
             <motion.div
@@ -45,6 +53,9 @@ export default function App() {
             </motion.div>
           ))}
         </AnimatePresence>
+      </div>
+      <div>
+        <Footer onAction={handleFooterAction}/>
       </div>
     </div>
   );

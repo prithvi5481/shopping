@@ -55,7 +55,7 @@ const ProductCard = ({ product, active, onSwipe }) => {
         rotate,
         touchAction: active ? 'none' : 'auto'
       }}
-      className={`relative w-[85vw] max-w-sm h-[60vh] max-h-[500px] bg-white rounded-xl shadow-md overflow-hidden ${
+      className={`relative w-full max-w-sm h-[75vh] md:h-[70vh] bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between ${
         active ? 'cursor-grab active:cursor-grabbing' : ''
       }`}
       whileTap={active ? { scale: 0.98 } : {}}
@@ -70,7 +70,7 @@ const ProductCard = ({ product, active, onSwipe }) => {
         </div>
       )}
 
-      <div className="h-[70%] w-full bg-orange-100 flex items-center justify-center">
+      <div className="h-auto md:h-[70%] w-full bg-gray-100 flex items-center justify-center">
         <img 
           src={product.imageUrl} 
           alt={product.name}
@@ -79,7 +79,7 @@ const ProductCard = ({ product, active, onSwipe }) => {
         />
       </div>
 
-      <div className="p-4 h-[30%] flex flex-col">
+      <div className="p-4 h-[120px] md:h-[30%] flex flex-col">
         <div className="mb-1">
           <span className="text-xs font-bold tracking-widest text-gray-400">
             {product.brand.toUpperCase()}
@@ -96,35 +96,6 @@ const ProductCard = ({ product, active, onSwipe }) => {
           )}
         </div>
       </div>
-
-      {/* {active && (
-        <>
-          <motion.div 
-            className="absolute top-4 left-4 text-green-500 font-bold"
-            animate={{ opacity: x.get() > 50 ? 1 : 0.2 }}
-          >
-            LIKE
-          </motion.div>
-          <motion.div 
-            className="absolute top-4 right-4 text-red-500 font-bold"
-            animate={{ opacity: x.get() < -50 ? 1 : 0.2 }}
-          >
-            PASS
-          </motion.div>
-          <motion.div 
-            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-blue-500"
-            animate={{ opacity: y.get() < -50 ? 1 : 0.2 }}
-          >
-            <GiShoppingCart size={24} />
-          </motion.div>
-          <motion.div 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-500"
-            animate={{ opacity: y.get() > 50 ? 1 : 0 }}
-          >
-            ↓ SAVE
-          </motion.div>
-        </>
-      )} */}
     </motion.div>
   );
 };
