@@ -55,7 +55,7 @@ const ProductCard = ({ product, active, onSwipe }) => {
         rotate,
         touchAction: active ? 'none' : 'auto'
       }}
-      className={`relative w-full max-w-sm h-[75vh] md:h-[70vh] bg-white rounded-xl shadow-md overflow-hidden flex flex-col justify-between ${
+      className={`relative w-full md:max-w-sm h-[80vh] md:h-[70vh] bg-white shadow-sm overflow-hidden flex flex-col justify-between ${
         active ? 'cursor-grab active:cursor-grabbing' : ''
       }`}
       whileTap={active ? { scale: 0.98 } : {}}
@@ -79,7 +79,7 @@ const ProductCard = ({ product, active, onSwipe }) => {
         />
       </div>
 
-      <div className="p-4 h-[120px] md:h-[30%] flex flex-col">
+      <div className="p-4 md:h-[30%] flex flex-col">
         <div className="mb-1">
           <span className="text-xs font-bold tracking-widest text-gray-400">
             {product.brand.toUpperCase()}

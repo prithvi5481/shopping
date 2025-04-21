@@ -18,8 +18,8 @@ export default function App() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col items-center bg-gray-50 p-4">
-      <div className='text-4xl mb-4 text-pretty-blue text-cursive font-pacifico'>
+    <div className="w-full h-screen flex flex-col items-center bg-gray-50 py-4">
+      <div className='flex justify-start w-full px-4 text-4xl mb-4 font-pacifico'>
         Shoppin'
       </div>
       <div className="relative w-full max-w-md h-[80vh]">
